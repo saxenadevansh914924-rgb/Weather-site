@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts cdn link for material symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    
+    <div class="container">
+        <h1>Weather App</h1>
+        <div class="search">
+            <input type="text" class="cityInput" placeholder="Enter location"  required/>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <h3 class="info"><span></span> <span></span></h3>
+        <div class="weather">
+            <div class="weather-icon same"><img height="160" width="160"/></div>
+            <div class="temp same">
+                <h1></h1>
+                <h2></h2>
+            </div>
+        </div>
+        <div class="extra-info">
+            <div class="humidity uni">
+                <h2><i class="fa-solid fa-droplet"></i><span>Humidity</span></h2>
+                <h2 class="percent"></h2>
+            </div>
+            <div class="windSpeed uni">
+                <h2><i class="fa-solid fa-wind"></i><span>Wind Speed</span></h2>
+                <h2 class="speed"></h2>
+            </div>
+        </div>
+        <div class="scrolldiv">
+            <div class="box1">
+                <div class="data">
+                    <h2><span class="material-symbols-outlined">air_freshener</span></h2>
+                    <h2 class="aqi-label"></h2>
+                    <h2 class="aqi"></h2>
+                </div>
+                <div class="data">
+                    <h2 class="wind-direction-logo"><span class="material-symbols-outlined">airwave</span></h2>
+                    <h2 class="wind-direction"></h2>
+                    <h3 class="wind-direction-value">Wind</h3>
+                </div>
+                <div class="data">
+                    <h2><span class="material-symbols-outlined">compress</span></h2>
+                    <h2 class="pressure-value"></h2>
+                    <h3 class="pressure">Air Press</h3>
+                </div>
+            </div>
+            <h2>Weather Forecast</h2>
+            <div class="box2">
+                <div class="row1 row">  
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+                <div class="row2 row">   
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+                <div class="row3 row">   
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+                <div class="row4 row">   
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+                <div class="row5 row">   
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+                <div class="row6 row">   
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+                <div class="row7 row">   
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+                <div class="row8 row">   
+                    <div class="col1 col"><h2></h2></div>
+                    <div class="col2 col"><h2></h2></div>
+                    <div class="col3 col"><h2></h2></div>
+                </div>
+            </div>
+            <div class="footer">
+                <span class="material-symbols-outlined">sunny</span>
+                <input type="range" min="0" max="23" value="12" class="slider" disabled/>
+                <span class="material-symbols-outlined">partly_cloudy_night</span>
+            </div>
+        </div>
+        <button class="getWeatherBtn">Get Weather</button>
+    </div>
+    <script src="script.js"></script>
+</body>
