@@ -241,19 +241,15 @@ input[type="range"]::-webkit-slider-thumb {
     color:rgba(255, 255, 255, 0.792);
 }
 .box1 .data h2{
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 @media(max-width: 1042px){
     .container{
-        width: 100vw;
-        height: 100vh;
-        border-radius: 0;
+        width: 96vw;
+        height: 96vh;
+        border-radius: 1.6rem;
         overflow: hidden;
-    }
-    .scrolldiv{
-        height: 30vh;
-    }
-    
+    }  
 }
 @media(min-width: 610px) and (max-width: 1024px){
     .container .search i{
