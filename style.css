@@ -242,12 +242,20 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .box1 .data h2{
     font-size: 0.9rem;
+    
+}
+.uni{
+    font-size: 1.0rem;
+}
+.info span{
+    font-size: 1.0rem;
 }
 @media(max-width: 1042px){
     .container{
-        width: 96vw;
-        height: 96vh;
-        border-radius: 1.6rem;
+        width: 99vw;
+        height: 99vh;
+        /* border-radius: 1.6rem; */
+        border-radius: 0;
         overflow: hidden;
     }  
 }
