@@ -21,10 +21,7 @@ async function getaqi(city){
         aqiStatus.innerText="Unavailable";
         return;
     }
-    aqi.innerText=response.data.data.aqi;
-    if(aqi.innerText=="undefined"){
-        aqi.innerText="N/A";
-    }
+    
     if(response.data.data.aqi<=50){
         aqiStatus.innerText="Good";
     }
@@ -102,8 +99,14 @@ async function getcloud(city){
         alert("City not found");
         
     }
-    let sunrise=new Date(response.data.sys.sunrise*1000).getHours();
-    let sunset=new Date(response.data.sys.sunset*1000).getHours();
+    let sunriseHour=new Date(response.data.sys.sunrise*1000).getHours();
+    let sunriseMin=new Date(response.data.sys.sunrise*1000).getMinutes();
+    let sunsetMin=new Date(response.data.sys.sunset*1000).getMinutes();
+    let sunsetHour=new Date(response.data.sys.sunset*1000).getHours();
+    let sunrise=document.querySelector(".sunrise");
+    let sunset=document.querySelector(".sunset");
+    sunrise.innerText=`${sunriseHour}:${sunriseMin}`;
+    sunset.innerText=`${sunsetHour}:${sunsetMin}`;
     let currentTime=new Date().getHours();
     console.log(sunrise,sunset,currentTime);
     slider.value=currentTime;
@@ -134,7 +137,7 @@ async function getimg(icon){
 
 async function showdata(city){
     let data=await getdata(city);
-    temp.innerText=data+"°C";
+    temp.innerText=data.toFixed(1)+" °C";
 }
 let icon=document.querySelector("i");
 input.addEventListener("keypress",()=>{
@@ -191,49 +194,49 @@ async function getforecast (city){
         if(i==0){
             row1.innerText=`${hour}:${minute}`;
             
-            col2row1.innerText=response.data.list[i].main.temp+"°C";
+            col2row1.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row1.innerText=response.data.list[i].weather[0].main;
         }
         else if(i==1){
             row2.innerText=`${hour}:${minute}`;
             console.log(response.data.list[i].weather[0].main);
-            col2row2.innerText=response.data.list[i].main.temp+"°C";
+            col2row2.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row2.innerText=response.data.list[i].weather[0].main;
         }
         else if(i==2){
             row3.innerText=`${hour}:${minute}`;
             console.log(response.data.list[i].weather[0].main);
-            col2row3.innerText=response.data.list[i].main.temp+"°C";
+            col2row3.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row3.innerText=response.data.list[i].weather[0].main;
         }
         else if(i==3){
             row4.innerText=`${hour}:${minute}`;
             console.log(response.data.list[i].weather[0].main);
-            col2row4.innerText=response.data.list[i].main.temp+"°C";
+            col2row4.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row4.innerText=response.data.list[i].weather[0].main;
         }
         else if(i==4){
             row5.innerText=`${hour}:${minute}`;
             console.log(response.data.list[i].weather[0].main);
-            col2row5.innerText=response.data.list[i].main.temp+"°C";
+            col2row5.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row5.innerText=response.data.list[i].weather[0].main;
         }
         else if(i==5){
             row6.innerText=`${hour}:${minute}`;
             console.log(response.data.list[i].weather[0].main);
-            col2row6.innerText=response.data.list[i].main.temp+"°C";
+            col2row6.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row6.innerText=response.data.list[i].weather[0].main;
         }
         else if(i==6){
             row7.innerText=`${hour}:${minute}`;
             console.log(response.data.list[i].weather[0].main);
-            col2row7.innerText=response.data.list[i].main.temp+"°C";
+            col2row7.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row7.innerText=response.data.list[i].weather[0].main;
         }
         else{
             row8.innerText=`${hour}:${minute}`;
             console.log(response.data.list[i].weather[0].main);
-            col2row8.innerText=response.data.list[i].main.temp+"°C";
+            col2row8.innerText=response.data.list[i].main.temp.toFixed(1)+" °C";
             col3row8.innerText=response.data.list[i].weather[0].main;
         }
     }
